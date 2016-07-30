@@ -1,0 +1,41 @@
+{
+  "name": "ngrx-store-freeze",
+  "version": "0.0.1",
+  "description": "@ngrx/store meta reducer that prevents state from being mutated.",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build_dist": "rm -rf dist && tsc",
+    "prepublish": "npm run build_dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codewareio/ngrx-store-freeze.git"
+  },
+  "keywords": [
+    "redux",
+    "ngrx",
+    "store",
+    "deep-freeze",
+    "middleware",
+    "meta reducer"
+  ],
+  "author": "Attila Egyed",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codewareio/ngrx-store-freeze/issues"
+  },
+  "homepage": "https://github.com/codewareio/ngrx-store-freeze/issues#readme",
+  "peerDependencies": {
+    "rxjs": "^5.0.0-beta.6",
+    "@ngrx/store": "^2.0.1"
+  },
+  "dependencies": {
+    "deep-freeze": "^0.0.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.5.4",
+    "tslint": "^3.14.0",
+    "typescript": "^2.1.0-dev.20160730"
+  },
+  "typings": "./dist/index.d.ts"
+}
