@@ -13,12 +13,21 @@ import { freeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 import { todoReducer } form './reducers'
 
-export default compose(freeze, combineReducers)({
+const META_REDUCERS = [combineReducers];
+
+if (__IS_DEV__) {
+  META_REDUCERS.unshift(freeze);
+}
+
+export default compose(...META_REDUCERS)({
   todos: todoReducer
 });
 ```
 
 ### Changes
+
+__0.0.3__
+* Update README
 
 __0.0.2__
 * Fix importing default module
