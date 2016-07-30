@@ -20,5 +20,8 @@ export default compose(freeze, combineReducers)({
 
 ### Changes
 
+__0.0.2__
+* Fix importing default module
+
 __0.0.1__
 * Initial release
