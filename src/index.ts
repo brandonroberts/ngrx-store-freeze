@@ -3,7 +3,7 @@ import * as deepFreeze from 'deep-freeze';
 /**
  * Middleware that prevents state from being mutated anywhere in the app.
  */
-export function freeze(reducer) {
+export function storeFreeze(reducer) {
 
     return function (state = {}, action) {
 

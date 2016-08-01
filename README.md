@@ -9,28 +9,17 @@ You should only include this meta reducer (middleware) in development environmen
 
 ```js
 import { compose } from '@ngrx/core/compose';
-import { freeze } from 'ngrx-store-freeze';
+import { storeFreeze } from 'ngrx-store-freeze';
 import { combineReducers } from '@ngrx/store';
 import { todoReducer } form './reducers'
 
 const META_REDUCERS = [combineReducers];
 
 if (__IS_DEV__) {
-  META_REDUCERS.unshift(freeze);
+  META_REDUCERS.unshift(storeFreeze);
 }
 
 export default compose(...META_REDUCERS)({
   todos: todoReducer
 });
 ```
-
-### Changes
-
-__0.0.3__
-* Update README
-
-__0.0.2__
-* Fix importing default module
-
-__0.0.1__
-* Initial release
