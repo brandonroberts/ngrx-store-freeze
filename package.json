@@ -1,11 +1,12 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "main": "./dist/index.js",
   "scripts": {
-    "build_dist": "rm -rf dist && tsc",
-    "prepublish": "npm run build_dist"
+    "build": "rm -rf dist && tsc",
+    "lint": "tslint 'src/**/*.ts'",
+    "prepublish": "npm run build && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -33,9 +34,13 @@
     "deep-freeze": "^0.0.1"
   },
   "devDependencies": {
+    "@ngrx/core": "^1.0.1",
+    "@ngrx/store": "^2.0.1",
     "rimraf": "^2.5.4",
     "tslint": "^3.14.0",
-    "typescript": "^2.1.0-dev.20160730"
+    "typescript": "^2.0.0",
+    "typings": "^1.3.2",
+    "rxjs": "5.0.0-beta.6"
   },
   "typings": "./dist/index.d.ts"
 }

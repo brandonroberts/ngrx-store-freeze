@@ -1,9 +1,10 @@
+import { ActionReducer } from '@ngrx/store';
 import * as deepFreeze from 'deep-freeze';
 
 /**
  * Middleware that prevents state from being mutated anywhere in the app.
  */
-export function storeFreeze(reducer) {
+export function storeFreeze(reducer): ActionReducer<any> {
 
     return function (state = {}, action) {
 
@@ -13,9 +14,9 @@ export function storeFreeze(reducer) {
 
         try {
             nextState = reducer(state, action);
-        } catch (err) {
-            console.error('You cannot mutate state.');
-            throw err;
+        } catch (error) {
+            console.error('State mutation is prohibited inside of reducers.');
+            throw error;
         }
 
         return nextState;
