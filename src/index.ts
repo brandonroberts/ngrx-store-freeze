@@ -9,6 +9,7 @@ export function storeFreeze(reducer): ActionReducer<any> {
     return function (state = {}, action) {
 
         deepFreeze(state);
+        deepFreeze(action.payload);
 
         let nextState;
 
