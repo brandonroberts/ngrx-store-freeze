@@ -1,6 +1,6 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "main": "./dist/index.js",
   "scripts": {
@@ -22,7 +22,16 @@
     "middleware",
     "meta reducer"
   ],
-  "author": "Attila Egyed",
+  "contributors": [
+    {
+      "name": "Attila Egyed",
+      "email": "attila.egyed.91@gmail.com"
+    },
+    {
+      "name": "Kwinten Pisman",
+      "email": "kwinten.pisman@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/codewareio/ngrx-store-freeze/issues"
