@@ -9,7 +9,11 @@ export function storeFreeze(reducer): ActionReducer<any> {
     return function (state = {}, action) {
 
         deepFreeze(state);
-        deepFreeze(action.payload);
+        
+        // guard against trying to free null or undefined types
+        if (action.payload) {
+            deepFreeze(action.payload);
+        }
 
         let nextState;
 
