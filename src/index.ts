@@ -19,6 +19,8 @@ export function storeFreeze(reducer): ActionReducer<any> {
             throw error;
         }
 
+        deepFreeze(nextState);
+
         return nextState;
     };
 }
