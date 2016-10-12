@@ -6,7 +6,11 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "dist",
-    "declaration": true
+    "declaration": true,
+    "types": [
+      "core-js",
+      "deep-freeze"
+    ]
   },
   "sources": [
     "typings/index.d.ts",
