@@ -8,12 +8,10 @@
     "outDir": "dist",
     "declaration": true,
     "types": [
-      "core-js",
-      "deep-freeze"
+      "core-js"
     ]
   },
   "sources": [
-    "typings/index.d.ts",
     "src/index.ts"
   ]
 }
