@@ -1,6 +1,6 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "main": "./dist/index.js",
   "scripts": {
@@ -38,20 +38,18 @@
   },
   "homepage": "https://github.com/codewareio/ngrx-store-freeze/issues#readme",
   "peerDependencies": {
-    "rxjs": "5.0.0-rc.4",
-    "@angular/core": "^2.3.0",
+    "@angular/core": "^2.4.0",
     "@ngrx/store": "^2.2.1"
   },
   "dependencies": {
     "deep-freeze-strict": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/core": "^2.3.0",
+    "@angular/core": "^2.4.0",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@types/core-js": "^0.9.35",
     "rimraf": "^2.5.4",
-    "rxjs": "5.0.0-rc.4",
     "tslint": "^4.0.2",
     "typescript": "^2.1.4"
   },
