@@ -1,6 +1,6 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "main": "./dist/index.js",
   "scripts": {
