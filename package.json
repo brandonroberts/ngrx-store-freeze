@@ -44,13 +44,15 @@
     "deep-freeze-strict": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/core": "^2.4.0",
+    "@angular/core": "^2.4.7",
     "@ngrx/core": "^1.2.0",
     "@ngrx/store": "^2.2.1",
     "@types/core-js": "^0.9.35",
     "rimraf": "^2.5.4",
+    "rxjs": "^5.1.1",
     "tslint": "^4.0.2",
-    "typescript": "^2.1.4"
+    "typescript": "^2.1.4",
+    "zone.js": "^0.7.7"
   },
   "typings": "./dist/index.d.ts"
 }
