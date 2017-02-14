@@ -36,7 +36,7 @@
   "bugs": {
     "url": "https://github.com/codewareio/ngrx-store-freeze/issues"
   },
-  "homepage": "https://github.com/codewareio/ngrx-store-freeze/issues#readme",
+  "homepage": "https://github.com/codewareio/ngrx-store-freeze#readme",
   "peerDependencies": {
     "@ngrx/store": "^2.2.1"
   },
