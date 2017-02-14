@@ -38,7 +38,6 @@
   },
   "homepage": "https://github.com/codewareio/ngrx-store-freeze/issues#readme",
   "peerDependencies": {
-    "@angular/core": "^2.4.0",
     "@ngrx/store": "^2.2.1"
   },
   "dependencies": {
