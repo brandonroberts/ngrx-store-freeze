@@ -15,7 +15,7 @@ export function storeFreeze(reducer): ActionReducer<any> {
             deepFreeze(action.payload);
         }
 
-        const nextState = nextState = reducer(state, action);
+        const nextState = reducer(state, action);
 
         deepFreeze(nextState);
 
