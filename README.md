@@ -22,7 +22,7 @@ import { compose } from '@ngrx/core/compose';
 import { combineReducers, provideStore } from '@ngrx/store';
 import { storeFreeze } from 'ngrx-store-freeze';
 import { TodoApp } from './todo-app.component';
-import { todoReducer, visibilityFilterReducer } form './reducers'
+import { todoReducer, visibilityFilterReducer } from './reducers'
 
 const metaReducers = __IS_DEV__
   ? [storeFreeze, combineReducers]
