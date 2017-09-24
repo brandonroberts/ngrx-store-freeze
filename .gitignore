@@ -11,3 +11,5 @@ Thumbs.db
 .idea
 dist
 typings
+
+!rollup.config.js

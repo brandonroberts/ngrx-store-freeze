@@ -1,24 +1,29 @@
-import { ActionReducer } from '@ngrx/store';
-import * as deepFreeze from 'deep-freeze-strict';
+import { ActionReducer, Action } from '@ngrx/store';
+const deepFreeze = require('deep-freeze-strict');
 
 /**
- * Middleware that prevents state from being mutated anywhere in the app.
+ * Meta-reducer that prevents state from being mutated anywhere in the app.
  */
-export function storeFreeze(reducer): ActionReducer<any> {
+export function storeFreeze<T, V extends Action = Action>(
+  reducer: ActionReducer<T, V>
+): ActionReducer<T, V>;
+export function storeFreeze<T, V extends Action = Action>(
+  reducer: ActionReducer<T, V>
+): ActionReducer<any, any> {
+  return function freeze(state, action): any {
+    state = state || {};
 
-    return function (state = {}, action) {
+    deepFreeze(state);
 
-        deepFreeze(state);
+    // guard against trying to freeze null or undefined types
+    if (action.payload) {
+      deepFreeze(action.payload);
+    }
 
-        // guard against trying to freeze null or undefined types
-        if (action.payload) {
-            deepFreeze(action.payload);
-        }
+    const nextState = reducer(state, action);
 
-        const nextState = reducer(state, action);
+    deepFreeze(nextState);
 
-        deepFreeze(nextState);
-
-        return nextState;
-    };
+    return nextState;
+  };
 }

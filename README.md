@@ -1,43 +1,53 @@
 ## ngrx-store-freeze
 
-[![NPM](https://nodei.co/npm/ngrx-store-freeze.png)][1]
+[![npm version](https://badge.fury.io/js/ngrx-store-freeze.svg)](https://badge.fury.io/js/ngrx-store-freeze)
+[![CircleCI](https://circleci.com/gh/brandonroberts/ngrx-store-freeze/tree/master.svg?style=svg&circle-token=6ba0f6b74d2186f7896a58377b8607346c07cee6)](https://circleci.com/gh/brandonroberts/ngrx-store-freeze/tree/master)
 
-[@ngrx/store][2] meta reducer that prevents state from being mutated. When mutation occurs, an exception will be thrown.
-This is useful during development mode to ensure that no part of the app accidentally mutates the state. Ported from
-[redux-freeze][3]
+ngrx-store-freeze is a meta-reducer that prevents state from being mutated
+
+* Recursively freezes the **current state**, the dispatched **action payload** if provided and the **new state**.
+* When mutation occurs, an exception will be thrown.
+* Should be used **only in development** to ensure that the state remains immutable.
 
 
-### Usage
-
-You should only include this meta reducer (middleware) in development environment.
+### Installation
 
 ```sh
 npm i --save-dev ngrx-store-freeze
 ```
 
+OR
 
-```ts
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { compose } from '@ngrx/core/compose';
-import { combineReducers, provideStore } from '@ngrx/store';
-import { storeFreeze } from 'ngrx-store-freeze';
-import { TodoApp } from './todo-app.component';
-import { todoReducer, visibilityFilterReducer } from './reducers'
-
-const metaReducers = __IS_DEV__
-  ? [storeFreeze, combineReducers]
-  : [combineReducers];
-
-const store = compose(...metaReducers)({
-  todos: todoReducer,
-  visibilityFilter: visibilityFilterReducer
-});
-
-bootstrap(TodoApp, [
-  provideStore(store)
-]);
+```sh
+yarn add ngrx-store-freeze --dev
 ```
 
-[1]: https://www.npmjs.com/package/ngrx-store-freeze
-[2]: https://github.com/ngrx/store
-[3]: https://github.com/buunguyen/redux-freeze
+### Setup
+
+```ts
+import { StoreModule, MetaReducer, ActionReducerMap } from '@ngrx/store';
+import { storeFreeze } from 'ngrx-store-freeze';
+import { environment } from '../environments/environment'; // Angular CLI environment
+
+export interface State {
+  // reducer interfaces
+}
+
+export const reducers: ActionReducerMap<State> = {
+  // reducers
+}
+
+export const metaReducers: MetaReducer<State>[] = !environment.production ? [storeFreeze]: [];
+
+@NgModule({
+  imports: [
+    StoreModule.forRoot(reducers, { metaReducers }),
+  ]
+})
+export class AppModule {}
+```
+
+## Credits
+
+[redux-freeze](https://github.com/buunguyen/redux-freeze) - Redux middleware that prevents state from being mutated  
+[Attila Egyed](https://github.com/tsm91) - The original maintainer of this project
