@@ -2,27 +2,36 @@
   "name": "ngrx-store-freeze",
   "version": "0.1.9",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
-  "main": "./dist/index.js",
+  "module": "index.js",
+  "es2015": "es6/index.js",
+  "main": "bundles/ngrx-store-freeze.umd.js",
   "scripts": {
-    "build": "rm -rf dist && tsc",
-    "lint": "tslint 'src/**/*.ts'",
-    "prepublish": "npm run build && npm run lint"
+    "clean": "rimraf dist",
+    "compile": "tsc",
+    "prebuild": "npm run clean",
+    "build": "npm run compile && npm run build:umd && npm run build:docs",
+    "build:es6": "tsc -p tsconfig.es6.json",
+    "build:docs": "cpy LICENSE package.json README.md dist",    
+    "build:umd": "npm run build:es6 && rollup -c rollup.config.js",
+    "lint": "tslint 'src/**/*.ts'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codewareio/ngrx-store-freeze.git"
+    "url": "git+https://github.com/brandonroberts/ngrx-store-freeze.git"
   },
   "keywords": [
     "RxJS",
-    "Angular2",
+    "Angular",
     "Redux",
     "Store",
     "@ngrx/store",
     "deep-freeze",
-    "middleware",
     "meta reducer"
   ],
-  "author": "Attila Egyed <attila.egyed.91@gmail.com>",
+  "authors": [
+    "Attila Egyed <attila.egyed.91@gmail.com>",
+    "Brandon Roberts <robertsbt@gmail.com>"
+  ],
   "contributors": [
     "Kwinten Pisman <kwinten.pisman@gmail.com>",
     "Igor Fischer <igor.fischer154@gmail.com>",
@@ -30,25 +39,26 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codewareio/ngrx-store-freeze/issues"
+    "url": "https://github.com/brandonroberts/ngrx-store-freeze/issues"
   },
-  "homepage": "https://github.com/codewareio/ngrx-store-freeze#readme",
+  "homepage": "https://github.com/brandonroberts/ngrx-store-freeze#readme",
   "peerDependencies": {
-    "@ngrx/store": "^2.2.1"
+    "@ngrx/store": "^4.0.0"
   },
   "dependencies": {
     "deep-freeze-strict": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/core": "^2.4.7",
-    "@ngrx/core": "^1.2.0",
-    "@ngrx/store": "^2.2.1",
-    "@types/core-js": "^0.9.35",
+    "@angular/core": "^4.0.0",
+    "@ngrx/store": "^4.0.0",
+    "@types/deep-freeze-strict": "^1.1.0",
+    "@types/node": "^8.0.30",
+    "cpy-cli": "^1.0.1",
     "rimraf": "^2.5.4",
-    "rxjs": "^5.1.1",
+    "rollup": "^0.41.4",
+    "rxjs": "^5.4.2",
     "tslint": "^4.0.2",
-    "typescript": "^2.1.4",
-    "zone.js": "^0.7.7"
-  },
-  "typings": "./dist/index.d.ts"
+    "typescript": "~2.4.2",
+    "zone.js": "^0.8.4"
+  }
 }
