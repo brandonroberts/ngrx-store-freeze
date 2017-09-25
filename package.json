@@ -1,6 +1,6 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.1.9",
+  "version": "0.2.0",
   "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "module": "index.js",
   "es2015": "es6/index.js",
@@ -11,7 +11,7 @@
     "prebuild": "npm run clean",
     "build": "npm run compile && npm run build:umd && npm run build:docs",
     "build:es6": "tsc -p tsconfig.es6.json",
-    "build:docs": "cpy LICENSE package.json README.md dist",    
+    "build:docs": "cpy LICENSE package.json README.md dist",
     "build:umd": "npm run build:es6 && rollup -c rollup.config.js",
     "lint": "tslint 'src/**/*.ts'"
   },
