@@ -47,6 +47,10 @@ export const metaReducers: MetaReducer<State>[] = !environment.production ? [sto
 export class AppModule {}
 ```
 
+## Additional Documentation
+
+* [Usage with `@ngrx/router-store`](./docs/docs.md#router-store-compatibility)
+
 ## Credits
 
 [redux-freeze](https://github.com/buunguyen/redux-freeze) - Redux middleware that prevents state from being mutated  
