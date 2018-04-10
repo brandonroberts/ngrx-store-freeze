@@ -1,8 +1,7 @@
 {
   "name": "ngrx-store-freeze",
-  "version": "0.2.1",
-  "description":
-    "@ngrx/store meta reducer that prevents state from being mutated.",
+  "version": "0.2.2",
+  "description": "@ngrx/store meta reducer that prevents state from being mutated.",
   "module": "index.js",
   "es2015": "es6/index.js",
   "main": "bundles/ngrx-store-freeze.umd.js",
