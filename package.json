@@ -43,20 +43,20 @@
   },
   "homepage": "https://github.com/brandonroberts/ngrx-store-freeze#readme",
   "peerDependencies": {
-    "@ngrx/store": ">=4.0.0"
+    "@ngrx/store": ">=4.0.0 | 6.0.0-beta.1"
   },
   "dependencies": {
     "deep-freeze-strict": "^1.1.1"
   },
   "devDependencies": {
-    "@angular/core": "^4.0.0",
-    "@ngrx/store": "^4.0.0",
+    "@angular/core": "^6.0.0",
+    "@ngrx/store": "^6.0.0-beta.1",
     "@types/deep-freeze-strict": "^1.1.0",
     "@types/node": "^8.0.30",
     "cpy-cli": "^1.0.1",
     "rimraf": "^2.5.4",
     "rollup": "^0.41.4",
-    "rxjs": "^5.4.2",
+    "rxjs": "^6.1.0",
     "tslint": "^4.0.2",
     "typescript": "~2.4.2",
     "zone.js": "^0.8.4"
