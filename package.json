@@ -43,7 +43,7 @@
   },
   "homepage": "https://github.com/brandonroberts/ngrx-store-freeze#readme",
   "peerDependencies": {
-    "@ngrx/store": ">=4.0.0 | 6.0.0-beta.1"
+    "@ngrx/store": ">=4.0.0 || ^6.0.0-beta.1"
   },
   "dependencies": {
     "deep-freeze-strict": "^1.1.1"
